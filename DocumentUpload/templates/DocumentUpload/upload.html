@@ -1,0 +1,30 @@
+
+{% extends 'DocumentUpload/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit" class="btn btn-success">Upload</button>
+</form>
+<br>
+<br>
+<br>
+<center>
+<h3>Current uploaded files.</h3>
+<p>--------------------------------------------------------------------------</p>
+{% if all_files %}
+{% for x in all_files %}
+<a href="">{{ x.timestamp }}--{{x.file_name}}</a><br>
+
+
+{% endfor %}
+
+{% else %}
+Sorry no Files uploaded as of today
+{% endif %}
+<p>Total uploaded files: {{ total_files }}</p>
+</center>
+{% endblock %}

@@ -1,0 +1,9 @@
+<TableHeaderColumn isKey dataField='id'>
+            ID
+          </TableHeaderColumn>
+          <TableHeaderColumn dataField='title'>
+            Title
+          </TableHeaderColumn>
+          <TableHeaderColumn dataField='text'>
+            Description
+          </TableHeaderColumn>
